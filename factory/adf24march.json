@@ -1,0 +1,12 @@
+{
+	"name": "adf24march",
+	"properties": {
+		"globalParameters": {
+			"mahesh": {
+				"type": "string",
+				"value": "iloveyou"
+			}
+		}
+	},
+	"location": "eastus"
+}
