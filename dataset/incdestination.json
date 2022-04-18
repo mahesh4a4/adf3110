@@ -1,0 +1,41 @@
+{
+	"name": "incdestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "folder3",
+				"container": "maheshcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "sno",
+				"type": "String"
+			},
+			{
+				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "deptid",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

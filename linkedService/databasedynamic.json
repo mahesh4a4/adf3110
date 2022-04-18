@@ -1,0 +1,21 @@
+{
+	"name": "databasedynamic",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"databaseparam": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMI",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=mahesh3110.database.windows.net;initial catalog=@{linkedService().databaseparam};user id=adf3110",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwMmY5OTNjMC04ZmViLTQzNDgtODgwMS0xN2ZkY2Q4ZTYxNjciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
