@@ -5,26 +5,14 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "folderpathsource",
-						"type": "DatasetReference"
-					},
 					"name": "source1"
 				},
 				{
-					"dataset": {
-						"referenceName": "destination",
-						"type": "DatasetReference"
-					},
 					"name": "source2"
 				}
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "destination",
-						"type": "DatasetReference"
-					},
 					"name": "sink1"
 				}
 			],
@@ -38,7 +26,8 @@
 			],
 			"scriptLines": [
 				"parameters{",
-				"     parameter1 as string",
+				"     parameter1 as string,",
+				"     parameter2 as string",
 				"}",
 				"source(output(",
 				"          sno as string,",
@@ -47,12 +36,10 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false,",
 				"     wildcardPaths:[($parameter1)]) ~> source1",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source2",
-				"source1, source2 exists(source1@sno == source2@sno,",
+				"     validateSchema: false) ~> source2",
+				"source1, source2 exists(sno == ERROR_FUNCTION(''),",
 				"     negate:true,",
 				"     broadcast: 'auto')~> exists1",
 				"exists1, source2 union(byName: true)~> union1",
