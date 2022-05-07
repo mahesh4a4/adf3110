@@ -1,0 +1,21 @@
+{
+	"name": "pathwithoutfilename",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "datafolder",
+				"container": "maheshcontainer"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
